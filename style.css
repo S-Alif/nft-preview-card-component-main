@@ -1,0 +1,195 @@
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+/* root variables */
+:root{
+    --white: hsl(0, 0%, 100%);
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    --very-dark-blue-main-bg: hsl(217, 54%, 11%);
+    --very-dark-blue-card-bg : hsl(216, 50%, 16%);
+    --very-dark-blue-line: hsl(215, 32%, 27%);
+
+    --font: 'outfit', sans-serif;
+    --bold: 600;
+    --regular: 400;
+    --light: 300;
+    --size-of-p-text: 18px;
+}
+
+/*================== main design ===================*/
+html{
+    font-size: 100%;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    display: block;
+    overflow-x: hidden;
+    background: var(--very-dark-blue-main-bg);
+    font-family: var(--font);
+    position: relative;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*==================== main container ==================*/
+.main-container{
+    width: 300px;
+    max-width: calc(100% - 20px);
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--very-dark-blue-card-bg);
+    border-radius: 20px;
+}
+
+.main-container .image{
+    width: 100%;
+    height: 260px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.image .overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: hsla(178, 100%, 50%, 0.624);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: 0.5s;
+}
+.image .overlay:hover{
+    opacity: 1;
+    transform: scale(1);
+    transition: 0.5s;
+}
+.image .overlay a img{
+    width: 32px;
+    height: auto;
+}
+
+/* title */
+.main-container .title{
+    display: inline-block;
+    padding: 15px 0;
+    font-size: 22px;
+    font-weight: var(--bold);
+    text-decoration: none;
+    color: var(--white);
+    transition: 0.5s;
+}
+.title:hover{
+    color: var(--cyan);
+    transition: 0.5s;
+}
+
+/* details */
+.main-container .details{
+    color: var(--soft-blue);
+    font-size: var(--font);
+}
+
+/* info */
+.info{
+    padding: 25px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.info .eth{
+    color: var(--cyan);
+    font-size: 14px;
+    display: flex;
+}
+.info .days-left{
+    color: var(--soft-blue);
+    font-size: 14px;
+    display: flex;
+}
+.info .icon {
+    display: inline-flex;
+    align-self: center;
+    padding-right: 5px;
+}
+
+.main-container hr{
+    height: 1px;
+    border: none;
+    background-color: var(--very-dark-blue-line);
+}
+
+/* profile */
+.main-container .profile{
+    padding: 20px 0 10px 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.profile .pfp{
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--white);
+    border-radius: 50%;
+    overflow: hidden;
+}
+.pfp img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.profile p{
+    padding-left: 10px;
+    font-size: 14px;
+    color: var(--soft-blue);
+}
+.profile p a{
+    text-decoration: none;
+    color: var(--white);
+    transition: 0.5s ease;
+}
+.profile p a:hover{
+    text-decoration: none;
+    color: var(--cyan);
+    transition: 0.5s ease;
+}
+
+
+.attribution {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    font-size: 15px;
+    text-align: center;
+    bottom: 0;
+    font-weight: var(--bold);
+    color: var(--soft-blue);
+}
+
+.attribution a {
+    color: var(--cyan);
+}
